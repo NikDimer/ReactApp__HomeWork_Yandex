@@ -8,7 +8,7 @@ export const CategoryBooksList = ({category}) => {
 
     return <ul className={classnames(styles.booksList)}>
         {
-            category.books.map((book) => <li key={book.id}><Book book={book}/></li>)
+            category.books.map((book) => <li key={book.id}><Book book={book} info={false}/></li>)
         }
       </ul>
     }

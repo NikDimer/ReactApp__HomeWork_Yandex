@@ -1,15 +1,11 @@
-import {Cinema} from "../../components/Cinema/Cinema";
+import {BookInfoBlock} from "../../components/BookInfoBlock/BookInfoBlock";
+import {Reviews} from "../../components/Reviews/Reviews";
 import {useState} from "react";
 
-export const CinemaPage = (props) => {
-    const [activeCinema, setActiveCinema] = useState(props.cinemas[0]);
-
-    return <div>
-        <div>
-            {
-                props.cinemas.map((cinema) => <button key={cinema.id} onClick={() => setActiveCinema(cinema)}>{cinema.name}</button>)
-            }
-        </div>
-        <Cinema cinema={activeCinema}/>
-    </div>
+export const BookPage = ({book}) => {
+    
+    return <main>
+        <BookInfoBlock book={book}/>
+        <Reviews reviews={book.reviews}/>
+    </main>
 }
