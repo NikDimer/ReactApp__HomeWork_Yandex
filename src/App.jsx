@@ -1,13 +1,43 @@
 import {Layout} from "./components/Layout/Layout";
 import {BooksPage} from "./pages/BooksPage/BooksPage";
 import {BookPage} from "./pages/BookPage/BookPage";
+import {BasketPage} from "./pages/BasketPage/BasketPage";
+import {HomePage} from "./pages/HomePage/HomePage";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import {booksShop} from "./constants/mock";
+
+import { useSelector } from "react-redux";
+import { selectCategories } from ".//store/category/selectors";
+
+import { Provider } from "react-redux";
+import { store } from "./store";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 
 
 export function App() {
-    return <Layout>
-        {/*<BookPage book={booksShop[1].books[1]}/>*/}
-        <BooksPage booksShop={booksShop}/>
-    </Layout>
+
+    
+    
+    return (
+    <Provider store={store}>
+        <BrowserRouter>
+            <Layout>
+            <Routes>
+                
+                {/*<Route path="/categories" element={<BooksPage />}>
+                <Route path=":categoryId" element={<BookPage />} />
+                </Route>*/}
+                {/*<Route index element={<HomePage/>}></Route>*/}
+                <Route exact path="/" element={<BooksPage/>}>
+                    {/*<Route path=":categoryId" element={<BooksPage/>} />*/}
+                </Route>
+                <Route path="/basket" element={<BasketPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+            </Layout>
+        </BrowserRouter>
+    </Provider>
+    );
 }
