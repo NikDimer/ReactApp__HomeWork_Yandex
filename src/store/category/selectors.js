@@ -6,5 +6,11 @@ export const selectCategories = (state) =>
 export const selectCategoryById = (state, categoryId) =>
   selectCategoryModule(state).entities[categoryId];
 
-export const selectCategoriesBookIds = (state, categoryId) =>
-  selectCategoryModule(state).entities[categoryId].books;
+export const selectCategoriesBookIds = (state, categoryId) => {
+  // Делаем проверку на полную загрузку данных, если загрузка состоялась, то обращаемся к store
+  if (state.category.status !== 'success') {
+    return;
+  }
+  return selectCategoryModule(state).entities[categoryId].books
+}
+  

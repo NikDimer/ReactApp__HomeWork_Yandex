@@ -4,6 +4,7 @@ import {Book} from "../../components/Book/Book";
 import styles from './styles.module.css';
 
 export const BookInfoBlock = ({book}) => {
+    console.log(book);
     return <div className={classnames(styles.BookInfoBlock)}>
         <Book info={true} book={book}/>
         <div className={classnames(styles.annotationBlock)}>

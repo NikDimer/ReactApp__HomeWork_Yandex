@@ -1,7 +1,7 @@
 import {Layout} from "./components/Layout/Layout";
 import {BooksPage} from "./pages/BooksPage/BooksPage";
 import {BookPage} from "./pages/BookPage/BookPage";
-import {BasketPage} from "./pages/BasketPage/BasketPage";
+import {CartPage} from "./pages/CartPage/CartPage";
 import {HomePage} from "./pages/HomePage/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import {booksShop} from "./constants/mock";
@@ -17,23 +17,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 export function App() {
-
-    
     
     return (
     <Provider store={store}>
         <BrowserRouter>
             <Layout>
             <Routes>
-                
-                {/*<Route path="/categories" element={<BooksPage />}>
-                <Route path=":categoryId" element={<BookPage />} />
-                </Route>*/}
-                {/*<Route index element={<HomePage/>}></Route>*/}
-                <Route exact path="/" element={<BooksPage/>}>
-                    {/*<Route path=":categoryId" element={<BooksPage/>} />*/}
-                </Route>
-                <Route path="/basket" element={<BasketPage />} />
+                <Route exact path="/" element={<BookPage />}/>
+                <Route path="/books:bookId" element={<BookPage />} />
+                <Route path="/cart" element={<CartPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
             </Layout>
