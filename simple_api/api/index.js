@@ -23,20 +23,4 @@ router.get("/books", (req, res, next) => {
   reply(res, result);
 });
 
-router.get("/reviews", (req, res, next) => {
-  const { id } = req.query;
-  let result = reviews;
-  if (id) {
-    const category = getById(categories)(id);
-    if (category) {
-      result = category.reviews.map(getById(result));
-    }
-  }
-  reply(res, result);
-});
-
-router.get("/users", (req, res, next) => {
-  reply(res, users);
-});
-
 module.exports = router;

@@ -7,6 +7,7 @@ import styles from './styles.module.css';
 export const CategoryMenu = ({ setActiveCategory, activeCategory }) => {
   const categories = useSelector((state) => selectCategories(state));
 
+
   return (
     <ul className={classnames(styles.mainNavigation)}>
       {categories.length > 0 &&

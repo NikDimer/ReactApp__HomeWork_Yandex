@@ -23,10 +23,8 @@ export function App() {
         <BrowserRouter>
             <Layout>
             <Routes>
-                <Route index path="/" element={<BooksPage />}/>
-                <Route path="/books" element={<BooksPage />}>
-                    <Route path=":bookId" element={<BookPage />} />
-                </Route>
+                <Route exact path="/" element={<BooksPage />}/>
+                <Route path="/books/:bookId" element={<BookPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>

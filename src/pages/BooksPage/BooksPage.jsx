@@ -16,15 +16,8 @@ export const BooksPage = () => {
     // Стейт отвечает содержит в себе активную категорию
     const [activeCategory, setActiveCategory] = useState(1);
 
-    console.log(activeCategory, ')')
-        
 
-
-    console.log(categories, '!!!')
-
-    
-
-
+    console.log(activeCategory, "000000")
 
     useEffect(() => {
         dispatch(loadCategoriesIfNotExist);

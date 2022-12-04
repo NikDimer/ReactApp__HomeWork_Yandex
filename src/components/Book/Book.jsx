@@ -10,10 +10,15 @@ import { cartSlice } from '../../store/cart';
 
 import { Link } from "react-router-dom";
 
-export const Book = ({ bookId, info }) => {
+export const Book = ({ bookId, info, bookCart }) => {
   const dispatch = useDispatch();
-  const book = useSelector((state) => selectBookById(state, bookId));
-  const count = useSelector((state) => selectBookCount(state, bookId));
+  let book = useSelector((state) => selectBookById(state, bookId));
+  let count = useSelector((state) => selectBookCount(state, bookId));
+
+  console.log(bookId, book, count)
+  if (bookCart != false) {
+    book = bookCart;
+  }
 
   if (!book) {
     return null;
@@ -25,7 +30,7 @@ export const Book = ({ bookId, info }) => {
       className={classnames(styles.book, { [styles.BookPageBook]: info })}
       key={book.id}
     >
-      <Link className={classnames(styles.bookLink)} to={book.id} key={book.id}>
+      <Link className={classnames(styles.bookLink)} to={'books/' + book.id} key={book.id}>
       <div className={classnames(styles.bookInfoPart)}>
         <h3 className={classnames(styles.bookTitle)}>{book.name}</h3>
         <p className={classnames(styles.bookInfo)}>{book.authors}</p>

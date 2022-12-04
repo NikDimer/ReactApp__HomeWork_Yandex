@@ -30,7 +30,7 @@ export const CategoryBooksList = ({categoryId}) => {
 
     return <ul className={classnames(styles.booksList)}>
         {
-            bookIds.map((id) => <li key={id}><Book key={id} bookId={id} info={false}/></li>)
+            bookIds.map((id) => <li key={id}><Book key={id} bookId={id} info={false} bookCart={false}/></li>)
         }
       </ul>
     }

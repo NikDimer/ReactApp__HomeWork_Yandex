@@ -1,10 +1,8 @@
 .CartListContainer {
-    
-    
-    width: 285px;
+    width: 387px;
     min-height: 483px;
 
-    position: fixed;
+    position: absolute;
     top: 118px;
     left: 40px;
 
@@ -14,6 +12,11 @@
     box-sizing: border-box;
 
     margin: 0;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .CartListTitle {
@@ -35,5 +38,82 @@
     padding: 0;
 }
 
+.cartPriceItem {
+    width: 100%;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.cartPriceItemName {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: black;
+}
+
+.cartPriceItemPrice {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+
+
+    color: #000000;
+}
+
+.CartListFinal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartListFinalPrice {
+    width: 245px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: #000000;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0;
+}
+
+.CartListFinalPrice > p {
+    margin: 0;
+}
+
+.CartListFinalBuyButton {
+    padding: 6px 12px 8px;
+    width: 79px;
+    height: 34px;
+
+    background: #000000;
+    border: none;
+    border-radius: 8px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+}
+
+.roubleFont {
+    font-family: 'Tahoma Regular';
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
